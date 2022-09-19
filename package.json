@@ -1,6 +1,6 @@
 {
   "name": "@figurl/core-utils",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && tsc",
     "prepare": "npm run build",
-    "release": "yarn build && yarn pack && gh release create $npm_package_version figurl-core-utils-v$npm_package_version.tgz"
+    "release-github": "yarn build && yarn pack && gh release create $npm_package_version figurl-core-utils-v$npm_package_version.tgz",
+    "release": "yarn build && npm publish && git tag $npm_package_version && git push --tags"
   },
   "keywords": [],
   "author": "Jeremy Magland",
